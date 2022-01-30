@@ -1,0 +1,45 @@
+         Project 1: Assembler – Pass 1 
+ *******************************************
+ COP 3404: INTRO TO SYSTEM SOFTWARE
+
+ STUDENT NAME: Milad Karimi
+ INSTRUCTOR NAME: Scott Piersall
+
+ DUE DATE:        9/22/2020
+ DATE SUBMITTED:  9/22/2020
+ 
+ This program accepts a command-line argument, which is a file
+ containing a SIC assembler program and then output a symbol
+ table as a result of analyzing the input SIC assembly file.
+ 
+ Program starts by reading the source file one line at a time,
+ tokenizes each line and separates Symbols, Opcodes, Operand1
+ and Operand2.  If at any point the program detects a comment
+ it will ignore it and continue with the next line.
+ 
+ If a line in the input file contains a symbol, it is added to
+ the symbol table. The symbol table is implemented using a hash
+ table of nodes. Each node consists of symbol name, memory
+ address and a pointer pointing to another node. Nodes can be
+ chained if the entry in the table is already occupied by another
+ symbol that has generated the same key. The program then outputs
+ the symbol table if no errors are encountered during the first
+ pass. If an error is detected, the program stops and prints an
+ error message.
+ 
+ Below is a list of errors the program can detect during pass one.
+ 1-	Invalid number of arguments.
+ 2-	Not able to open input file for reading.
+ 3-	No START directive.
+ 4-	No END directive
+ 5-	START directive with no address.
+ 6-	Invalid hex value.
+ 7-	Program counter exceeds memory limit.
+ 8-	Empty line in the source file.
+ 9-	Duplicate symbol names.
+ 10-	Symbol name matches a directive.
+ 11-	Symbol name longer than six characters.
+ 12-	Symbol name contains special characters
+	(space, $, !, =, +, - , (,  ), @).
+ 13-	Symbol table does not start with an uppercase character.
+ 14-	Directive with inappropriate operand.
